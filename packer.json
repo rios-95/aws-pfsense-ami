@@ -1,7 +1,7 @@
 {
     "variables": {
-        "vm_name": "pfSense-CE-2.4.4",
-        "iso_name": "pfSense-CE-2.4.4-RELEASE-p3-amd64",
+        "vm_name": "pfSense-CE-2.7.2",
+        "iso_name": "pfSense-CE-2.7.2-RELEASE-p3-amd64",
         "iso_checksum": "e3d67a8d45e37fe3fcbad8a89206b85dad3b187db60a3a14347384891e1b2e31"
     },
     "builders": [

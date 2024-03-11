@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Use a specific profile from your AWS credentials file. If not required, use import-role-default.sh instead
 PROFILE="${PROFILE}"
 
 aws iam delete-role-policy --profile ${PROFILE} --role-name vmimport --policy-name vmimport

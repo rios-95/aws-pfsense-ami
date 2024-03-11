@@ -1,1 +1,1 @@
-## Place `pfSense-CE-2.4.4-RELEASE-p3-amd64.iso` here
+## Place `pfSense-CE-2.7.2-RELEASE-p3-amd64.iso` here

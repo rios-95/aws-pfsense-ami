@@ -6,16 +6,18 @@ Build and import a pfSense image for usage on AWS using Hashicorp Packer with Vi
 It is not intended that the repository will see any updates, bugs fixes or further adaption to new pfSense versions. Feel free to do whatever you like with it in your own fork.
 
 There are areas in the repository which should be considered as a draft, not finished or rushed.
+- You need to have Packer installed and VirtualBox or quemu plugin
+  - For virtualbox run: packer plugins install github.com/hashicorp/virtualbox
 
 # License
 Unlicense
 
 # Instructions
-* Download a copy of the pfSense image `pfSense-CE-2.6.0-RELEASE-amd64.iso` to the `input/` directory and then run `packer build pfsenese-<qemu|vbox>.json`.
+* Download a copy of the pfSense image `pfSense-CE-2.7.2-RELEASE-amd64.iso` to the `input/` directory and then run `packer build pfsenese-<qemu|vbox>.json`.
 * `remote-qemu-vnc.sh|remote-vbox-rdp.sh` can be used to view the build process. Do not manually press keys during viewing.
 * Created images are placed in the `output-<qemu|vbox>/` directory.
-* `aws/import-role/import-role.sh` contains the required roles for the AWS import processes. Policies need to be modified to match your AWS account.
-* `aws/ec2-snapshot.sh` is prepeared for importing the created image to AWS. Need to be adjusted to meet your configuration.
+* `aws/import-role/import-role.sh` contains the required roles for the AWS import processes. Policies need to be modified to match your AWS account. You need to set an unique S3 bucket name in the policies and scripts, and create it un your account before continue.
+* `aws/ec2-snapshot.sh` is prepeared for importing the created image to AWS. Need to be adjusted to meet your configuration (S3 bucket name).
 * Create an EC2 Instance from the imported image. Before starting it, attach a second network interface (ENI) to the instance, otherwise pfSense will not come up properly.
 
 Depending on the build machine and available resources it might be necessary to adjust timings in the jsons for the keystrokes. This files build nicely on a NVME backed setup.
